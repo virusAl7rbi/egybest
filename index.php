@@ -43,7 +43,7 @@ function CallAPI($method, $url)
 
 if(isset($_GET['q'])){
     $q = str_replace('+', '%20', $_GET['q']);
-    $url = "https://al7rbi.net/search?q=".$q;
+    $url = "http://localhost:8080/search?q=".$q;
     $url = str_replace(' ', '%20', $url);
     $response = CallAPI('GET',$url);
 
@@ -121,7 +121,7 @@ if(isset($_GET['q'])){
                 echo '<th scope="row">'.$e['number'].'</th>';
                 echo '<td>'.$e['rate'].'</td>';
                 echo '<td>'.$e['time'].'</td>';
-                echo '<td><a href="'.$e['url'].'">watch</a></td>';
+                echo '<td><a href="'.$e['url'].'" targer="_blank">watch</a></td>';
                 echo '</tr>';
             }
             echo '</tbody>';
